@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Form = () => {
-    return (
+const Form = ({setInputText, todos, setTodos, inputText, setStatus}) =>{
+    const inputTextHandler = (e) =>{
+    setInputText(e.target.value);
+    }
+
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([
+            ...todos,{ text: inputText, completed:false, id: Math.random() * 1000 }
+        ]);
+        setInputText("");
+    };
+    const statusHandler = (e) =>{
+        setStatus(e.target.value);
+    }
+    return(
         <form>
-            <input type="text" className="todo-input" />
-            <button className="todo-button" type="submit">
+            <input value={inputText} onChange={inputTextHandler} type="text" class="todo-input" />
+            <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
@@ -14,8 +28,9 @@ const Form = () => {
                     <option value="uncompleted">Uncompleted</option>
                 </select>
             </div>
+
         </form>
-    )
+    );
 }
 
 export default Form;
