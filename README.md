@@ -26,4 +26,4 @@ This will start the development server and open the app in your default browser.
 
 ## Credits
 
-This project was created by Ampas Theodoros. The original code can be found on [GitHub](https://github.com/AmpasTheodoros/React-Todo-List).
+This project was created by [AmpasTheodoros](https://github.com/AmpasTheodoros) as a way to learn and practice basics of React such as components, state, props. React Hooks lifecycle ie useEffect() and using controlled HTML form in React.
